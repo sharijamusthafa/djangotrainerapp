@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'inst/base.html' %}
+{% block body_block %}
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-4">
+
+        </div>
+    <div class="col-4">
+        <h1 class="text-info">SKILL DETAILS</h1>
+        <form method="post">
+            {% csrf_token %}
+          {{form.as_p}}
+         <input type="submit" value="create">
+
+        </form>
+
+
+    </div>
+        <div class="col-4">
+
+        </div>
+
+
+    <table class="table table-dark">
+        <tr>
+            <td>skill</td>
+
+
+
+
+            <td colspan="2">ACTION</td>
+        </tr>
+        {%for item in skill %}
+        <tr>
+            <td>{{item.skill}}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
+
